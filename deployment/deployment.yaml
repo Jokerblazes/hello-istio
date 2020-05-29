@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-v1
+  labels:
+    app: helloworld
+    version: F001
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworld
+      version: F001
+  template:
+    metadata:
+      labels:
+        app: helloworld
+        version: F001
+    spec:
+      containers:
+      - name: helloworld
+        image: dapriosamples/distributed-calculator-go:edge
+        ports:
+        - containerPort: 6000
+        imagePullPolicy: Always
