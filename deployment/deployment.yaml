@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: dapriosamples/distributed-calculator-go:edge
+        image: jokercd/helloworld:v1
         ports:
         - containerPort: 6000
         imagePullPolicy: Always
