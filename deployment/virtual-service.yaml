@@ -16,16 +16,6 @@ spec:
     - destination:
         host: helloworld
         subset: f002  
-  - match:
-    - uri:
-        prefix: /hi
-    - headers:
-        end-user:
-          exact: dev1
-    route:
-    - destination:
-        host: helloworld
-        subset: f003  
   - route:
     - destination:
         host: helloworld
