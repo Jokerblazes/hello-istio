@@ -8,9 +8,3 @@ spec:
   - name: r1
     labels:
       version: r1
-  - name: f003
-    labels:
-      version: f003
-  - name: f002
-    labels:
-      version: f002
