@@ -1,0 +1,10 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: helloworld-f003
+spec:
+  host: helloworld
+  subsets:
+  - name: f003
+    labels:
+      version: f003

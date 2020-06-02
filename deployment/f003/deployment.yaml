@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-v3
+  labels:
+    app: helloworld
+    version: f003
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworld
+      version: f003
+  template:
+    metadata:
+      labels:
+        app: helloworld
+        version: f003
+    spec:
+      containers:
+      - name: helloworld
+        image: jokercd/helloworld:v3
+        ports:
+        - containerPort: 6000
+        imagePullPolicy: Always
