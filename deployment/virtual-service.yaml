@@ -7,11 +7,11 @@ spec:
     - helloworld
   http:
   - match:
-    - uri:
-        prefix: "/hello"
     - headers:
         end-user:
           exact: dev1
+      uri:
+        prefix: "/hello"
     route:
     - destination:
         host: helloworld
