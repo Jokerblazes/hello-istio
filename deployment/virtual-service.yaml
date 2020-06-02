@@ -6,6 +6,7 @@ spec:
   hosts:
     - helloworld
   http:
+  # feature2 route;when user is dev1 and uri is hello
   - match:
     - headers:
         end-user:
@@ -15,7 +16,19 @@ spec:
     route:
     - destination:
         host: helloworld
-        subset: f002  
+        subset: f002
+  # feature3 route;when user is dev1 and uri is hi
+  - match:
+    - headers:
+        end-user:
+          exact: dev1
+      uri:
+        prefix: "/hi"
+    route:
+    - destination:
+        host: helloworld
+        subset: f003
+  # default route
   - route:
     - destination:
         host: helloworld
