@@ -9,13 +9,12 @@ import (
 )
 
 func helloWorld(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode("hello world!")
+	json.NewEncoder(w).Encode("hello world v2!")
 }
 
 func hiWorld(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode("hi world!")
 }
-
 
 func main() {
 	router := mux.NewRouter()
