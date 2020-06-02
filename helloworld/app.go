@@ -9,11 +9,11 @@ import (
 )
 
 func helloWorld(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode("hello world v2!")
+	json.NewEncoder(w).Encode("hello world!")
 }
 
 func hiWorld(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode("hi world!")
+	json.NewEncoder(w).Encode("hi world v3!")
 }
 
 func main() {
