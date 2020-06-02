@@ -1,10 +1,10 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: helloworld
+  name: helloworld-f002
 spec:
   host: helloworld
   subsets:
-  - name: r1
+  - name: f002
     labels:
-      version: r1
+      version: f002
