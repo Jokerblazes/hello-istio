@@ -6,6 +6,14 @@ spec:
   hosts:
     - helloworld
   http:
+  - match:
+    - headers:
+        end-user:
+          exact: dev1
+    route:
+    - destination:
+        host: helloworld
+        subset: f002  
   - route:
     - destination:
         host: helloworld
