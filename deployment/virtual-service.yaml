@@ -2,19 +2,37 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: helloworld
+# spec:
+#   hosts:
+#     - helloworld
+#   http:
+#   - route:
+#     - destination:
+#         host: helloworld
+#         subset: f002
 spec:
   hosts:
-  - helloworld
+    - helloworld
   http:
-  - match:
-    - headers:
-        end-user:
-          exact: dev1
-    route:
-    - destination:
-        host: helloworld
-        subset: F002  
   - route:
     - destination:
         host: helloworld
-        subset: F001
+        subset: f001
+      weight: 50
+    - destination:
+        host: helloworld
+        subset: f002
+      weight: 50
+  # http:
+  # - match:
+  #   - headers:
+  #       end-user:
+  #         exact: dev1
+  #   route:
+  #   - destination:
+  #       host: helloworld
+  #       subset: f002  
+  # - route:
+  #   - destination:
+  #       host: helloworld
+  #       subset: f001

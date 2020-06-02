@@ -5,6 +5,9 @@ metadata:
 spec:
   host: helloworld
   subsets:
-  - name: F001
+  - name: f001
     labels:
-      version: F001
+      version: f001
+  - name: f002
+    labels:
+      version: f002
