@@ -13,26 +13,26 @@ metadata:
 spec:
   hosts:
     - helloworld
-  http:
-  - route:
-    - destination:
-        host: helloworld
-        subset: f001
-      weight: 50
-    - destination:
-        host: helloworld
-        subset: f002
-      weight: 50
   # http:
-  # - match:
-  #   - headers:
-  #       end-user:
-  #         exact: dev1
-  #   route:
-  #   - destination:
-  #       host: helloworld
-  #       subset: f002  
   # - route:
   #   - destination:
   #       host: helloworld
   #       subset: f001
+  #     weight: 50
+  #   - destination:
+  #       host: helloworld
+  #       subset: f002
+  #     weight: 50
+  http:
+  - match:
+    - headers:
+        end-user:
+          exact: dev1
+    route:
+    - destination:
+        host: helloworld
+        subset: f002  
+  - route:
+    - destination:
+        host: helloworld
+        subset: f001
